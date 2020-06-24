@@ -9,10 +9,9 @@ env:
 - FIRESTORE_EMULATOR_HOST=localhost:8080 NODE_ENV=test
 
 before_install:
-- cd functions
+- yarn
 
 install:
-- yarn
 - yarn global add firebase-tools
 - firebase setup:emulators:firestore
 
@@ -23,9 +22,6 @@ before_script:
 
 script:
 - yarn workspaces run test
-
-before_deploy:
-- cd ..
 
 deploy:
   provider: firebase
