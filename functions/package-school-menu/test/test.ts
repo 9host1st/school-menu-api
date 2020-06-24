@@ -3,7 +3,7 @@ import { FirestoreAccessor } from "../src/data/FirestoreAccessor";
 import { SchoolMenuService } from "../src/service/SchoolMenuService";
 import { SchoolType } from "package-common";
 import { notEqual } from "assert";
-import { QueryStringOptions } from "./type/QueryStringOptions";
+import { QueryStringOptions } from "../src/type/QueryStringOptions";
 import { initializeApp } from "firebase-admin";
 
 initializeApp({

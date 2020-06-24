@@ -3,29 +3,26 @@
     "version": "3.3.1",
     "description": "초·중·고등학교 식단 쉽게 불러오기",
     "repository": "https://github.com/5d-jh/school-menu-api",
-    "main": "package-function/dist/index.js",
+    "main": "functions/package-function/dist/index.js",
     "author": "5d-jh",
     "license": "MIT",
     "scripts": {
-        "build": "tsc --build --force tsconfig.json",
+        "build": "tsc",
         "emulator": "yarn run build && firebase emulators:start --only database,functions",
         "serve": "firebase serve --only functions",
         "shell": "yarn run build && firebase functions:shell",
         "start": "npm run shell",
         "deploy": "firebase deploy --only functions",
         "logs": "firebase functions:log",
-        "local": "ts-node package-function/src/index.ts",
+        "local": "env NODE_ENV=local ts-node functions/package-function/src/index.ts",
         "lint": "exit 0"
     },
     "engines": {
-        "node": "10"
+        "node": "12"
     },
     "private": true,
     "workspaces": [
-        "package-common",
-        "package-function",
-        "package-school-menu",
-        "package-school-info"
+        "functions/*"
     ],
     "dependencies": {
         "firebase-admin": "^8.10.0",
