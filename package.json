@@ -18,7 +18,7 @@
         "lint": "exit 0"
     },
     "engines": {
-        "node": "12"
+        "node": "10"
     },
     "private": true,
     "workspaces": [
